@@ -1,6 +1,6 @@
 Name:		uwsm
 Version:	0.21.1
-Release:	2
+Release:	%autorelease
 Summary:	Universal Wayland Session Manager
 Group:		Hyprland
 License:	MIT
