@@ -1,6 +1,6 @@
 Name:		uwsm
-Version:	0.21.1
-Release:	2
+Version:	0.23.3
+Release:	1
 Summary:	Universal Wayland Session Manager
 Group:		Hyprland
 License:	MIT
@@ -10,6 +10,7 @@ Source0:	%{url}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	desktop-file-utils
 BuildRequires:	pkgconfig(scdoc)
 BuildRequires:  python-dbus
+BuildRequires:	python-xdg
 
 Buildsystem: meson
 Buildoption: -Duuctl=enabled -Dfumon=enabled -Duwsm-app=enabled
@@ -43,9 +44,11 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/*.desktop
 %{_bindir}/uuctl
 %{_datadir}/%{name}/
 %{_datadir}/applications/uuctl.desktop
-%{_mandir}/man1/%{name}.1.*
+%{_mandir}/man1/uuctl.1.zst
+%{_mandir}/man1/%{name}*
 %{_mandir}/man1/fumon.1.*
 %{_mandir}/man3/%{name}-plugins.3.*
-%{_userunitdir}/fumon.service
-
+%{_userunitdir}/*.slice
+%{_userunitdir}/*.target
+%{_userunitdir}/*.service
 
